@@ -12,8 +12,8 @@ export class HeroesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getHeroes() {
-    const url  = this.makeUrl(`characters?limit=${environment.limit}`);
+  getHeroes(offset: number = 0) {
+    const url  = this.makeUrl(`characters?limit=${environment.limit}&offset=${offset}`);
 
     return this.httpClient.get(url);
   }
