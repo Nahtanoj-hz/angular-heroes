@@ -1,0 +1,102 @@
+@import "../../../styles.scss";
+
+$heroes-list-margin: 100px;
+$heroes-list-margin-sm: 50px;
+$heroes-list-margin-md: 75px;
+$hero-card-width: 650px;
+$hero-card-height: 250px;
+
+.heroes-list {
+  padding: $base-margin;
+
+  &--intro {
+    padding: $base-margin;
+    background-color: $hero-card-background-color;
+    border-radius: $border-radius;
+    box-shadow: $base-margin / 2 $base-margin / 4 $base-margin / 4
+      rgba($gray-text, 0.7);
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    text-align: left;
+  }
+
+  &--heroes {
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+    margin: $base-margin $heroes-list-margin;
+    border: 2px solid $white;
+    border-radius: $border-radius;
+    background-color: $heroes-list-background-color;
+
+    @include media-xs() {
+      margin: $base-margin;
+    }
+
+    @include media-sm {
+      margin: $base-margin $heroes-list-margin-sm;
+    }
+
+    @include media-md {
+      margin: $base-margin $heroes-list-margin-md;
+    }
+
+    .hero {
+      width: $hero-card-width;
+      height: $hero-card-height;
+      margin: $base-margin;
+      background-color: $hero-card-background-color;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      border-top-right-radius: $border-radius * 4;
+      border-bottom-right-radius: $border-radius * 4;
+      box-shadow: $base-margin / 2 $base-margin / 4 $base-margin / 4
+        rgba($gray-text, 0.7);
+
+      @include media-xs() {
+        width: auto;
+        height: 400px;
+      }
+
+      @include media-sm {
+        width: auto;
+        height: 350px;
+      }
+
+      &--image {
+        max-height: 100%;
+        max-width: 250px;
+
+        @include media-xs() {
+          max-width: 120px;
+        }
+
+        @include media-sm() {
+          max-width: 150px;
+        }
+      }
+
+      &--details {
+        margin: $base-margin;
+        width: 60%;
+        flex-direction: row;
+        place-content: center;
+        flex-wrap: wrap;
+
+        > div {
+          margin-bottom: $base-margin;
+        }
+
+        &--label {
+          margin-right: $base-margin;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

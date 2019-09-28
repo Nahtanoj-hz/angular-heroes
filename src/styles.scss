@@ -6,3 +6,42 @@ body, html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// colors
+$white: #fff;
+$gray-text: #252525;
+$red: #ff2626;
+$orange: #ff4100;
+$heroes-list-background-color: rgba($orange, 0.5);
+$hero-card-background-color: rgba($white, 0.8);
+
+// Media queries
+$break-small: 480px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+// variables
+$base-margin: 20px;
+$border-radius: 20px;
+
+// Mixins
+$media-xs: "screen and (max-width: #{$break-small})";
+@mixin media-xs {
+  @media #{$media-xs} {
+    @content;
+  }
+}
+
+$media-sm: "screen and (min-width: #{$break-small}) and (max-width: #{$break-medium})";
+@mixin media-sm {
+  @media #{$media-sm} {
+    @content;
+  }
+}
+
+$media-md: "screen and (min-width: #{$break-medium}) and (max-width: #{$break-large})";
+@mixin media-md {
+  @media #{$media-md} {
+    @content;
+  }
+}

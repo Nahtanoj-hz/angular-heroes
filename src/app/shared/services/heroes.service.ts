@@ -13,7 +13,7 @@ export class HeroesService {
   constructor(private httpClient: HttpClient) { }
 
   getHeroes() {
-    const url  = this.makeUrl('characters?limit=100');
+    const url  = this.makeUrl(`characters?limit=${environment.limit}`);
 
     return this.httpClient.get(url);
   }
