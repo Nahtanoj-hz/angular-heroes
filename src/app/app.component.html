@@ -1,0 +1,29 @@
+<div class="home">
+    <div class="heroes">
+        <div class="heroes--intro">
+            <h3>Angular Example Translation APP</h3>
+            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+        </div>
+        <div class="hero" *ngFor="let hero of heroes">
+            <img class="hero--image" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+            <div class="hero--details">
+                <div>
+                    <span class="hero--details--label">Name</span>
+                    <span>{{hero.name}}</span>
+                </div>
+                <div>
+                    <span class="hero--details--label">Id</span>
+                    <span>{{hero.id}}</span>
+                </div>
+                <div>
+                    <span class="hero--details--label">Description</span>
+                    <span>{{hero.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home--footer">
+        Made with <span style="color: #e25555;">&#9829;</span> by <a href="https://github.com/Nahtanoj-hz" target="_blank"> Nahtanoj-hz</a>
+    </div>
+</div>
+<router-outlet></router-outlet>

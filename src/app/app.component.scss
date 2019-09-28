@@ -1,0 +1,153 @@
+// colors
+$white: #fff;
+$gray-text: #252525;
+$red: #ff2626;
+$orange: #ff4100;
+$heroes-list-background-color: rgba($orange, 0.5);
+$hero-card-background-color: rgba($white, 0.8);
+
+// variables
+$base-margin: 20px;
+$border-radius: 20px;
+$hero-card-width: 800px;
+$hero-card-height: 300px;
+
+// Media queries
+$break-small: 480px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+$media-xs: "screen and (max-width: #{$break-small})";
+@mixin media-xs {
+  @media #{$media-xs} {
+    @content;
+  }
+}
+
+$media-sm: "screen and (min-width: #{$break-small}) and (max-width: #{$break-medium})";
+@mixin media-sm {
+  @media #{$media-sm} {
+    @content;
+  }
+}
+
+$media-md: "screen and (min-width: #{$break-medium}) and (max-width: #{$break-large})";
+@mixin media-md {
+  @media #{$media-md} {
+    @content;
+  }
+}
+
+.home {
+  background-image: url("../assets/images/marvel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow-y: scroll;
+  color: $gray-text;
+  position: relative;
+
+  .heroes {
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    flex-wrap: wrap;
+    width: auto;
+    margin: $base-margin 300px;
+    border: 2px solid $white;
+    border-radius: $border-radius;
+    background-color: $heroes-list-background-color;
+
+    @include media-xs() {
+        margin: $base-margin;
+    }
+
+    @include media-sm {
+        margin: $base-margin 100px;
+    }
+
+    @include media-md {
+        margin: $base-margin 150px;
+    }
+
+    &--intro {
+        width: 100%;
+        height: $hero-card-height;
+        margin: $base-margin;
+        padding: $base-margin;
+        background-color: $hero-card-background-color;
+        border-radius: $border-radius;
+        box-shadow: $base-margin / 2 $base-margin / 4 $base-margin / 4 rgba($gray-text, 0.7);
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-content: flex-start;
+        text-align: left;
+    }
+
+    .hero {
+        width: $hero-card-width;
+        height: $hero-card-height;
+        margin: $base-margin;
+        background-color: $hero-card-background-color;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        border-top-right-radius: $border-radius * 4;
+        border-bottom-right-radius: $border-radius * 4;
+        box-shadow: $base-margin / 2 $base-margin / 4 $base-margin / 4 rgba($gray-text, 0.7);
+
+        @include media-xs() {
+            width: auto;
+            height: 400px;
+        }
+    
+        @include media-sm {
+            width: auto;
+            height: 350px;
+        }
+    
+        &--image {
+            max-height: 100%;
+            max-width: 250px;
+
+            @include media-xs() {
+                max-width: 120px;
+            }
+            
+            @include media-sm() {
+                max-width: 150px;
+            }
+        }
+
+        &--details {
+            margin: $base-margin;
+            width: 60%;
+            flex-direction: row;
+            place-content: center;
+            flex-wrap: wrap;
+
+            > div {
+                margin-bottom: $base-margin;
+            }
+
+            &--label {
+                margin-right: $base-margin;
+                font-weight: bold;
+            }
+        }
+    }
+  }
+
+  &--footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid $white;
+    border-radius: $border-radius;
+    background-color: $heroes-list-background-color;
+    padding: $base-margin;
+  }
+}
