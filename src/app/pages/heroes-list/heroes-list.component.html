@@ -1,4 +1,12 @@
 <div class="heroes-list">
+    <mat-toolbar color="primary" class="heroes-list--header">
+        <span class="heroes-list--header--title">Marvel Heroes</span>
+        <mat-form-field class="heroes-list--header--search" appearance="fill" [formGroup]="form">
+            <mat-label>Puedes escribir aquí un nombre para buscar</mat-label>
+            <input matInput type="text" formControlName="term" (keyup)="search()">
+            <mat-icon *ngIf="form.get('term').value" matSuffix (click)="clear()">close</mat-icon>
+        </mat-form-field>
+    </mat-toolbar>
 
     <div class="heroes-list--container">
         <div class="heroes-list--heroes">
@@ -22,10 +30,11 @@
         </div>
     </div>
 
-
-    <mat-paginator class="heroes-list--paginator"
-        [length]="totalResults"
-        [pageSize]="pageSize"
+    <mat-paginator class="heroes-list--paginator" 
+        color="primary"
+        [showFirstLastButtons]="true"
+        [length]="totalResults" 
+        [pageSize]="pageSize" 
         (page)="onPage($event)">
     </mat-paginator>
 </div>

@@ -12,13 +12,23 @@ export class HeroesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getHeroes(offset: number = 0) {
-    const url  = this.makeUrl(`characters?limit=${environment.limit}&offset=${offset}`);
+  getHeroes(offset: number = 0, term: string = '') {
+    const url  = this.makeUrl(`characters?limit=${environment.limit}`, offset, term);
 
     return this.httpClient.get(url);
   }
 
-  private makeUrl(url: string) {
-    return `${this.API}/${url}&apikey=${this.API_KEY}`;
+  private makeUrl(url: string, offset: number, term: string) {
+    let newUrl: string = `${this.API}/${url}&apikey=${this.API_KEY}`;
+    
+    if (offset >= 0) {
+      newUrl += `&offset=${offset}`;
+    }
+    
+    if (term) {
+      newUrl += `&nameStartsWith=${term}`;
+    }
+
+    return newUrl;
   }
 }

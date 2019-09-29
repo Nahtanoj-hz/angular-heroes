@@ -3,15 +3,33 @@
 $heroes-list-margin: 100px;
 $heroes-list-margin-sm: 50px;
 $heroes-list-margin-md: 75px;
+$heroes-list-container: 85vh;
+$heroes-list-header-height: 80px;
+
 $hero-card-width: 650px;
 $hero-card-height: 250px;
 
 .heroes-list {
-    padding: $base-margin;
-    
+    &--header {
+        position: relative;
+        height: $heroes-list-header-height;
+
+        &--title {
+            position: absolute;
+            left: $base-margin;
+        }
+        
+        &--search {
+            position: absolute;
+            right: $base-margin;
+            width: $hero-card-width;
+        }
+    }
+
+
     &--container {
         overflow-y: auto;
-        height: 90vh;        
+        height: $heroes-list-container;        
         margin: $base-margin $heroes-list-margin;
         border: 2px solid $white;
         border-radius: $border-radius;
