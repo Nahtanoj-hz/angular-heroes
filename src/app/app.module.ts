@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatChipsModule } from '@angular/material/chips'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { HeroesListComponent } from './pages/heroes-list/heroes-list.component';
     MatIconModule,
     MatToolbarModule,
     MatButtonModule,
+    MatChipsModule,
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]

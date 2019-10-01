@@ -1,0 +1,59 @@
+@import "../../../../styles.scss";
+
+$heroes-details-margin: 100px;
+$heroes-details-margin-sm: 50px;
+$heroes-details-margin-md: 75px;
+$heroes-details-container: 85vh;
+$heroes-details-header-height: 80px;
+
+.hero-details {
+    &--container {
+        display: flex;
+        height: $heroes-details-container;        
+        margin: $base-margin $heroes-details-margin;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        background-color: $heroes-list-background-color;
+    }
+
+    &--back {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+
+    .hero {
+        width: 90%;
+        height: 90%;
+        margin: $base-margin;
+        background-color: $hero-card-background-color;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        border-top-right-radius: $border-radius * 4;
+        border-bottom-right-radius: $border-radius * 4;
+        box-shadow: $base-margin / 2 $base-margin / 4 $base-margin / 4
+        rgba($gray-text, 0.7);
+
+        &--image {
+            max-height: 100%;
+            max-width: 50%;
+        }
+
+        &--details {
+            margin: $base-margin;
+            flex-grow: 1;
+            flex-direction: row;
+            place-content: center;
+            flex-wrap: wrap;
+
+        > div {
+            margin-bottom: $base-margin;
+        }
+
+        &--label {
+            margin-right: $base-margin;
+            font-weight: bold;
+        }
+        }
+    }
+}

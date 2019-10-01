@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   api: 'https://gateway.marvel.com/v1/public',
   apiKey: '',
-  limit: 50
+  limit: 20
 };
 
 /*

@@ -18,10 +18,16 @@ export class HeroesService {
     return this.httpClient.get(url);
   }
 
-  private makeUrl(url: string, offset: number, term: string) {
+  getHero(heroId: number) {
+    const url  = this.makeUrl(`characters/${heroId}?`);
+
+    return this.httpClient.get(url);
+  }
+
+  private makeUrl(url: string, offset: number = null, term: string = '') {
     let newUrl: string = `${this.API}/${url}&apikey=${this.API_KEY}`;
     
-    if (offset >= 0) {
+    if (offset && offset >= 0) {
       newUrl += `&offset=${offset}`;
     }
     

@@ -6,6 +6,18 @@ export interface IHero {
         path: string;
         extension: string
     };
+    comics: {
+        available: number;
+    };
+    series: {
+        available: number;
+    };
+    stories: {
+        available: number;
+    };
+    events: {
+        available: number;
+    };
     resourceURI: string;
 }
 

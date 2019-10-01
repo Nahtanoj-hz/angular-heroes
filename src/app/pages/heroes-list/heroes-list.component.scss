@@ -3,7 +3,7 @@
 $heroes-list-margin: 100px;
 $heroes-list-margin-sm: 50px;
 $heroes-list-margin-md: 75px;
-$heroes-list-container: 85vh;
+$heroes-list-container: 80vh;
 $heroes-list-header-height: 80px;
 
 $hero-card-width: 650px;
@@ -25,7 +25,6 @@ $hero-card-height: 250px;
             width: $hero-card-width;
         }
     }
-
 
     &--container {
         overflow-y: auto;

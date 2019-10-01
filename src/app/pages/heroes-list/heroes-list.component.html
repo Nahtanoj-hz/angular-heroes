@@ -10,7 +10,7 @@
 
     <div class="heroes-list--container">
         <div class="heroes-list--heroes">
-            <div class="hero" *ngFor="let hero of heroes">
+            <div class="hero" *ngFor="let hero of heroes" [routerLink]="['/details/', hero.id]">
                 <img class="hero--image" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
                 <div class="hero--details">
                     <div>

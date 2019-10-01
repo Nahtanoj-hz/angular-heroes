@@ -1,0 +1,31 @@
+<div class="hero-details">
+    <div class="hero-details--container">
+        <button class="hero-details--back" type="button" color="primary" mat-raised-button [routerLink]="['/']">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <div class="hero">
+            <img class="hero--image" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+            <div class="hero--details">
+                <div>
+                    <span class="hero--details--label">Name</span>
+                    <span>{{hero.name}}</span>
+                </div>
+                <div>
+                    <span class="hero--details--label">Id</span>
+                    <span>{{hero.id}}</span>
+                </div>
+                <div>
+                    <span class="hero--details--label">Description</span>
+                    <span>{{hero.description}}</span>
+                </div>
+
+                <mat-chip-list aria-label="hero extras">
+                    <mat-chip color="primary">Comics {{hero.comics.available}}</mat-chip>
+                    <mat-chip color="accent">Series {{hero.series.available}}</mat-chip>
+                    <mat-chip color="primary">Stories {{hero.stories.available}}</mat-chip>
+                    <mat-chip color="accent">Events {{hero.events.available}}</mat-chip>
+                </mat-chip-list>              
+            </div>
+        </div>
+    </div>
+</div>

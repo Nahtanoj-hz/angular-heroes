@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: HeroesListComponent
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./pages/hero-details/hero-details.module').then(m => m.HeroDetailsModule)
   }
 ];
 
