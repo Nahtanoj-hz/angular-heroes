@@ -3,7 +3,7 @@
         <button class="hero-details--back" type="button" color="primary" mat-raised-button [routerLink]="['/']">
             <mat-icon>arrow_back</mat-icon>
         </button>
-        <div class="hero">
+        <div class="hero" *ngIf="hero">
             <img class="hero--image" src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
             <div class="hero--details">
                 <div>
